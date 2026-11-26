@@ -1,2 +1,17 @@
-#object
-about project 
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a test
+        run: echo "CI workflow is running successfully"
